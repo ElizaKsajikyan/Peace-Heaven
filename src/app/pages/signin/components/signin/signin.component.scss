@@ -1,0 +1,19 @@
+@import "../../../../../scss/variables";
+@import "../../../../../scss/mixins";
+
+.wrapper {
+  @include generalContainer;
+  .page-label{
+    @include pageLabel;
+  }
+}
+
+.mainContent {
+  & .form_block {
+    margin-top: 99px;
+    width: 100%;
+  @include inputStyling
+  }
+ @include brownBtn
+}
+

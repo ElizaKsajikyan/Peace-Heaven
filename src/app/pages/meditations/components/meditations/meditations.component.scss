@@ -1,0 +1,105 @@
+@import "../../../../../scss/variables";
+@import "../../../../../scss/mixins";
+
+.container {
+  @include generalContainer;
+  .description {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 12px;
+    margin-bottom: 50px;
+  }
+  .general-title {
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 12px;
+  }
+}
+
+.date-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #B5A494;
+  padding: 17px 28px;
+  margin: 50px auto;
+  overflow: auto;
+  .date {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 12px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: inherit;
+    align-items: inherit;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid $bace-color;
+    color: $bace-color;
+    &.active {
+      background: #8A5424;
+      border-color: #EFBC9D
+    }
+    &:not(:last-child){
+      margin-right:5px;
+    }
+  }
+  @media all and  (max-width: 400px){
+    width: calc(100% + 30px);
+    margin-left: -15px;
+  }
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 65px;
+  margin: 75px 0 0;
+  width: 100%;
+  &:focus {
+    outline: none;
+  }
+  &::-webkit-slider-runnable-track {
+    height: 17px;
+
+  }
+  &::-webkit-slider-thumb {
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    border: 1px solid $bace-color;
+    background: $bace-color;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -7px;
+  }
+  &::-moz-range-thumb {
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    border: 1px solid $bace-color;
+    background: $bace-color;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -7px;
+  }
+}
+
+.icons-group {
+  margin-top: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  &-btn {
+    margin-right: 17px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    &:focus{
+      outline: none;
+    }
+  }
+
+}

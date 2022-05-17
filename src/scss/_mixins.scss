@@ -1,0 +1,73 @@
+@mixin generalContainer() {
+  width: 375px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 38px 0;
+  color: $bace-color;
+  .title {
+    font-size: 24px;
+    font-weight: 800;
+    text-align: left;
+  }
+  @media all and  (max-width: 400px){
+    padding: 38px 15px;
+  }
+}
+
+@mixin pageLabel() {
+  font-weight: 500;
+  font-size: 28px;
+  text-align: center;
+  color: $bace-color;
+  margin: 82px auto 0;
+  width: 337px;
+  max-width: 100%;
+}
+@mixin inputStyling(){
+  & .input-item {
+      background: $light-pink;
+      width: inherit;
+      text-align: center;
+      outline: none;
+      padding: 16px 0;
+      border: none;
+      font-size: 24px;
+
+      &:focus::placeholder {
+        color: transparent;
+      }
+
+      &::placeholder {
+        color: $black;
+        opacity: 0.3;
+      }
+    }
+  }
+
+
+@mixin brownBtn(){
+  .btn {
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 64px;
+    min-height: 56px;
+    padding: 18px;
+    display: inline-block;
+    border: 0;
+    cursor: pointer;
+    transition: all .3s ease;
+    &.btn-brown {
+      background: $brown;
+      color: $bace-color;
+      border: 1px solid transparent;
+    }
+    @media (pointer: fine) {
+        &.btn-brown:hover {
+          background: $bace-color;
+          color: $brown;
+          border-color: $brown;
+        }
+    }
+  }
+}

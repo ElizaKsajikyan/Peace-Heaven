@@ -1,0 +1,49 @@
+<div class="wrapper">
+  <h2 class="title">Peace & Heaven</h2>
+  <div class="mainContent">
+    <ng-container *ngIf="!isSent">
+      <ng-container *ngTemplateOutlet="signin"></ng-container>
+    </ng-container>
+    <ng-container *ngIf="isSent">
+      <ng-container *ngTemplateOutlet="confirmCode"></ng-container>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #signin>
+  <h2 class="page-label">Enter your phone number to sign in</h2>
+
+  <div class="d-flex flex-column form_block">
+    <input class="input-item" type="text"
+           maxlength="12"
+           appNumber
+           [formControl]="phone"
+           placeholder="212 867 5309"
+           (keyup.enter)="sendOTPCode()"/>
+
+    <button class="mt-5 btn btn-brown"
+            (click)="sendOTPCode()"
+    >
+      Send Code
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #confirmCode>
+  <h2 class="page-label">Please enter the verification code we sent you</h2>
+
+  <div class="d-flex flex-column form_block">
+    <input class="input-item" type="text"
+           maxlength="6"
+           [formControl]="code"
+           appNumber
+           (keyup.enter)="verifyOTPCode()"
+           placeholder="525910"/>
+
+    <button class="mt-5 btn btn-brown"
+            (click)="verifyOTPCode()"
+    >
+      Verify Code
+    </button>
+  </div>
+</ng-template>

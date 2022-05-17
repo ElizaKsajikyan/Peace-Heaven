@@ -1,0 +1,53 @@
+<div class="container">
+  <h2 class="title">Peace & Heaven</h2>
+  <div class="mainContent">
+    <h2 *ngIf="!isComplete" class="page-label">We do not have an active card-on-file for<br/> you. Please add one</h2>
+    <h2 *ngIf="isComplete" class="page-label">Great!</h2>
+
+    <form class="d-flex flex-column card" [formGroup]="cardForm" (ngSubmit)="saveCard()" *ngIf="!isComplete">
+      <div class="d-flex flex-column">
+        <label for="card-number">Card Number</label>
+        <input class="card_no input-item" type="text"
+               appNumber
+               appCardNumber
+               id="card-number"
+               formControlName="number"
+               maxlength="20"
+               placeholder="1234 1234 1234 1234"/>
+      </div>
+
+      <div class="d-flex mt-3 justify-content-between">
+        <div class="d-flex flex-column col-5">
+          <label>EXPIRY</label>
+          <input class="input-item" type="text"
+                 appExpiryDate
+                 formControlName="expiry"
+                 maxlength="12"
+                 placeholder="12/23"/>
+        </div>
+        <div class="d-flex flex-column col-5">
+          <label>CVC</label>
+          <input class="input-item" type="text"
+                 formControlName="cvc"
+                 appNumber
+                 maxlength="3"
+                 placeholder="123"/>
+        </div>
+      </div>
+
+
+      <div class="d-flex flex-column mt-3 col-5">
+        <label>ZIP</label>
+        <input class="input-item" type="text"
+               formControlName="zip"
+               appNumber
+               maxlength="5"
+               placeholder="90120"/>
+      </div>
+
+      <button class="mt-4 btn btn-brown" [disabled]="!cardForm.valid">
+        Add Card to File
+      </button>
+    </form>
+  </div>
+</div>

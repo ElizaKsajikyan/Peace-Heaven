@@ -1,0 +1,26 @@
+@import "../../../../../scss/variables";
+@import "../../../../../scss/mixins";
+.container {
+  @include generalContainer;
+  .page-label{
+    @include pageLabel
+  }
+}
+.mainContent {
+  & .card {
+    margin-top: 57px;
+    & label {
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      color: $bace-color;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    & .card-no {
+      width: inherit;
+    }
+    @include inputStyling
+  }
+  @include brownBtn
+}
